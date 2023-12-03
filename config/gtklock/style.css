@@ -14,12 +14,12 @@ window#eDP-2 {
     background-color: black;
 }
 box#window-box {
-    padding-bottom: 5em;
+    padding-bottom: 2em;
 }
 
 label#clock-label {
-    font-size: 5em;
-    padding-bottom: 3em;
+    font-size: 8em;
+    padding-bottom: 1em;
     color: #fff;
 }
 label#input-label {
@@ -27,8 +27,8 @@ label#input-label {
 }
 
 entry#input-field {
-    color: @theme_fg_color;
-    background-color: @theme_bg_color;
+    color: #000;
+    background-color: #fff;
 }
 
 button {
@@ -39,4 +39,6 @@ button {
 image#user-image {
 
 }
-
+#user-name {
+  font-size: 60px;
+}
