@@ -1,0 +1,167 @@
+// Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
+//
+// Waybar modules configuration
+{
+	// waybar-backlight
+    "backlight": {
+		"interval": 2,
+		"align": 0,
+		"rotate": 0,
+        //"device": "amdgpu_bl0",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", ""],
+		// Commands to execute on events
+        "on-click": "",
+        "on-click-middle": "",
+        "on-click-right": "",
+        "on-update": "",
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "smooth-scrolling-threshold": 1,
+    },
+	
+    "wlr/workspaces": {
+		"format": "{}",
+		"on-click": "activate",
+		"all-outputs": false,
+    },
+	
+	// waybar-battery
+    "battery": {
+		"interval": 15,
+		"align": 0,
+		"rotate": 0,
+		//"bat": "BAT1",
+		//"adapter": "ACAD",
+		"full-at": 100,
+		"design-capacity": false,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-full": "{icon} Full",
+        //"format-good": "",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["", "", "", "", ""],
+        "format-time": "{H}h {M}min",
+        "tooltip": true,
+    },
+    
+    "custom/powerprofiles": {
+		"exec": "powerprofilesctl get",
+		"interval": 5,
+		"on-scroll-up": "bash ~/.config/waybar/scripts/powerprofiles.sh",
+		"smooth-scrolling-threshold": 10,
+		"exec-on-event": true,
+		"format": "🟅 {}",
+    },
+    
+    "custom/playing": {
+		"exec": "playerctl metadata --follow --format '{{ status }} {{ trunc(title,8) }} | {{ trunc(artist,8) }}' | sed -u 's/Playing//;s/Paused//'",
+		"on-click": "playerctl play-pause",
+		"on-scroll-up": "playerctl position 5-",
+		"on-scroll-down": "playerctl position 5+",
+    },
+
+	// waybar-clock
+    "clock": {
+		"interval": 60,
+		"align": 0,
+		"rotate": 0,
+        //"timezone": "America/New_York",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><big>{calendar}</big></tt>",
+        "format": " {:%H:%M}",
+        "format-alt": " {:%a %b %d, %G}"
+    },
+    
+    "custom/notification": {
+		"tooltip": false,
+		"format": "{icon}",
+		"format-icons": {
+			"notification": " ",
+			"none": "",
+			"dnd-notification": " ",
+			"dnd-none": ""
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"escape": true
+    },
+
+	// waybar-cpu
+    "cpu": {
+         "interval": 5,
+         "format": " LOAD: {usage}%",
+    },
+           
+	// waybar-custom
+    "custom/menu": {
+         "format": "",
+         "tooltip": false,
+         "on-click": "pkill wofi || wofi",
+    },
+
+    "custom/power": {
+         "format": "⏻",
+         "tooltip": false,
+         "on-click": "$HOME/.config/hypr/scripts/wlogout",
+    },
+    
+    "custom/caffeine": {
+		"exec": "bash ~/.config/waybar/scripts/caffeine.sh getnolock",
+		"on-click": "bash ~/.config/waybar/scripts/caffeine.sh switchnolock"
+	},         	
+	
+	// waybar-memory
+    "memory": {
+         "interval": 10,
+         "format": " USED: {used:0.1f}G",
+    },
+           
+	// waybar-network
+    "network": {
+		"interval": 5,
+        //"interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
+        "format-disconnected": "睊 Disconnected",
+        "format-disabled": "睊 Disabled",
+        "format": " {bandwidthUpBits} |  {bandwidthDownBits}",
+        "tooltip-format": " {ifname} via {gwaddr}",
+    },
+
+	// waybar-pulseaudio
+    "pulseaudio": {
+        //"format": "{volume}% {icon} {format_source}",
+        "format": "{icon} {volume}%",
+        "format-muted": " Mute",
+        "format-bluetooth": " {volume}% {format_source}",
+        "format-bluetooth-muted": " Mute",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 5.0,
+		// Commands to execute on events
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-double-click-right": "bash ~/.config/waybar/scripts/switch_outputs.sh",
+        "smooth-scrolling-threshold": 1,
+    },
+
+	// waybar-tray
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    }
+}

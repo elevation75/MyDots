@@ -1,0 +1,42 @@
+
+window#HDMI-A-1 {
+	background-image: url("/home/just/Pictures/dune2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+}
+window#eDP-2 {
+	background-image: url("/home/just/Pictures/wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+}
+box#window-box {
+    padding-bottom: 5em;
+}
+
+label#clock-label {
+    font-size: 5em;
+    padding-bottom: 3em;
+    color: #fff;
+}
+label#input-label {
+    font-size: 0px;
+}
+
+entry#input-field {
+    color: @theme_fg_color;
+    background-color: @theme_bg_color;
+}
+
+button {
+    color: @theme_fg_color;
+    background-color: @theme_bg_color;
+}
+
+image#user-image {
+
+}
+
