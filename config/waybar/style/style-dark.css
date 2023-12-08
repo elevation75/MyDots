@@ -10,13 +10,13 @@
 window#waybar {
     background: rgba(21, 18, 27, 0);
     /*background: rgba(12, 12, 12, 0.5);*/
-    color: #041e42;
+    color: #002244;
 	padding: 0;
     margin: 0;
 }
 
 tooltip {
-    background: #041e42;
+    background: #002244;
     opacity: 1.0;
     border-radius: 8px;
     border-width: 1px;
@@ -30,7 +30,7 @@ tooltip label{
 
 #workspaces button {
     padding: 2px;
-    color: #041e42;
+    color: #002244;
     margin-right: 5px;
 }
 
@@ -94,6 +94,7 @@ tooltip label{
     font-size: 30px;
     margin-left: 4px;
     margin-top: 0px;
+    margin-bottom: 3px;
     margin-right: 10px;
 }
 
@@ -109,7 +110,6 @@ tooltip label{
 #temperature.critical {
     color: #e92d4d;
 }
-
 
 #workspaces {
     padding-right: 0px;
@@ -133,17 +133,18 @@ tooltip label{
     font-size: 40px;
     margin-left: 4px;
     margin-top: 0px;
+    margin-bottom: 3px;
     margin-right: 10px;
 }
 
 #custom-wallpaper {
-	color: #041e42;
+	color: #002244;
     border-left: 0px;
     border-right: 0px;
 }
 
 #pulseaudio {
-    color: #041e42;
+    color: #002244;
     border-left: 0px;
     border-right: 0px;
 }
@@ -154,7 +155,7 @@ tooltip label{
     border-right: 0px;
 }
 #custom-launcher {
-    color: #041e42;
+    color: #002244;
     border-left: 0px;
     border-right: 0px;
 }
