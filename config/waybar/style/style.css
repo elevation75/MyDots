@@ -99,6 +99,7 @@ tooltip label{
     font-size: 30px;
     margin-left: 4px;
     margin-top: 0px;
+    margin-bottom: 3px;
     margin-right: 10px;
 }
 #tray, #custom-lock_screen, #temperature, #backlight, #cpu, #memory,#custom-launcher, #custom-launcher2, #custom-sofi, #custom-email, #custom-chatgpt, #pulseaudio {
@@ -138,6 +139,7 @@ tooltip label{
     font-size: 40px;
     margin-left: 4px;
     margin-top: 0px;
+    margin-bottom:3px;
     margin-right: 10px;
 } 
 
