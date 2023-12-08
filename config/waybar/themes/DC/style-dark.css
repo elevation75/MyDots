@@ -2,8 +2,8 @@
     border: none;
     border-radius: 0;
     font-family: "JetBrainsMono NF";
-    font-weight: normal;
-    font-size: 14px;
+    font-weight: 400;
+    font-size: 16px;
     min-height: 0;
 }
 
@@ -60,6 +60,7 @@ tooltip label{
 #custom-email,
 #custom-lock_screen,
 #custom-light_dark,
+#custom-power_btn,
 #custom-power_profile,
 #custom-weather,
 #window,
@@ -89,19 +90,11 @@ tooltip label{
     border: 2px;
 }
 
-#custom-power_btn {
-    color: #869397;
-    font-size: 30px;
-    margin-left: 4px;
-    margin-top: 0px;
-    margin-right: 10px;
-}
-
 #tray, #custom-lock_screen, #temperature, #backlight, #cpu, #memory,#custom-launcher, #custom-launcher2, #custom-sofi, #custom-email, #custom-chatgpt, #pulseaudio {
     border-radius:15px 15px 15px 15px;
 }
 
-#custom-light_dark, #pulseaudio.microphone, #battery, #disk, #custom-wallpaper, #clock, #custom-weather, #network {
+#custom-light_dark, #custom-power_btn,#pulseaudio.microphone, #battery, #disk, #custom-wallpaper, #clock, #custom-weather, #network {
     border-radius: 15px 15px 15px 15px;
     margin-right: 5px;
 }

@@ -2,21 +2,21 @@
     border: none;
     border-radius: 0;
     font-family: "JetBrainsMono NF";
-    font-weight: normal;
-    font-size: 14px;
+    font-weight: 400;
+    font-size: 20px;
     min-height: 0;
 }
 
 window#waybar {
     background: rgba(21, 18, 27, 0);
     /*background: rgba(12, 12, 12, 0.5);*/
-    color: #041e42;
+    color: #f4e800;
 	padding: 0;
     margin: 0;
 }
 
 tooltip {
-    background: #041e42;
+    background: #f4e800;
     opacity: 1.0;
     border-radius: 8px;
     border-width: 1px;
@@ -25,12 +25,12 @@ tooltip {
 }
 
 tooltip label{
-    color: #869397;
+    color: #11111b;
 }
 
 #workspaces button {
     padding: 2px;
-    color: #041e42;
+    color: #f4e800;
     margin-right: 5px;
 }
 
@@ -60,6 +60,7 @@ tooltip label{
 #custom-email,
 #custom-lock_screen,
 #custom-light_dark,
+#custom-power_btn,
 #custom-power_profile,
 #custom-weather,
 #window,
@@ -74,36 +75,25 @@ tooltip label{
 #battery,
 #network,
 #tray,
-#custom-sofi,
-#custom-launcher,
-#custom-launcher2,
-#custom-chatgpt,
 #temperature,
+#workspaces,
 #backlight {
-    background: #869397;
-    /*background: rgba(12, 12, 12, 0.0);*/
-    opacity: 1.0;
-    padding: 5px 10px;
-    margin: 4px 4px;
-    margin-top: 2px;
-    border: 2px;
+    /*background: #11111b;*/
+    background: rgba(12, 12, 12, 0.0);
+    opacity: 0.8;
+    padding: 0px 10px;
+    margin: 3px 0px;
+    margin-top: 10px;
+    border: 0px;
 }
 
-#custom-power_btn {
-    color: #869397;
-    font-size: 30px;
-    margin-left: 4px;
-    margin-top: 0px;
+#tray, #custom-lock_screen, #temperature, #backlight, #cpu{
+    border-radius: 10px 0px 0px 10px;
+}
+
+#custom-light_dark, #custom-power_btn, #workspaces, #pulseaudio.microphone, #battery, #disk{
+    border-radius: 0px 10px 10px 0px;
     margin-right: 10px;
-}
-
-#tray, #custom-lock_screen, #temperature, #backlight, #cpu, #memory,#custom-launcher, #custom-launcher2, #custom-sofi, #custom-email, #custom-chatgpt, #pulseaudio {
-    border-radius:15px 15px 15px 15px;
-}
-
-#custom-light_dark, #pulseaudio.microphone, #battery, #disk, #custom-wallpaper, #clock, #custom-weather, #network {
-    border-radius: 15px 15px 15px 15px;
-    margin-right: 5px;
 }
 
 #temperature.critical {
@@ -129,47 +119,33 @@ tooltip label{
 }
 
 #custom-logo {
-    color: #869397;
-    font-size: 40px;
-    margin-left: 4px;
-    margin-top: 0px;
+    font-size: 55px;
+    margin-left: 15px;
+    margin-top: 7px;
     margin-right: 10px;
+    background-image: url('/home/just/.config/waybar/icons/ham1.png');
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #custom-wallpaper {
-	color: #041e42;
+	color: #00A19B;
     border-left: 0px;
     border-right: 0px;
 }
 
 #pulseaudio {
-    color: #041e42;
+    color: #407cdd;
     border-left: 0px;
     border-right: 0px;
 }
 
 #pulseaudio.microphone {
-    color: #003594;
-    border-left: 0px;
-    border-right: 0px;
-}
-#custom-launcher {
-    color: #041e42;
+    color: #ad6bfd;
     border-left: 0px;
     border-right: 0px;
 }
 
-#custom-launcher2 {
-    color: #ffffff;
-    border-left: 0px;
-    border-right: 0px;
-}
-
-#custom-sofi {
-    color: red;
-    border-left: 0px;
-    border-right: 0px;
-}
 #battery {
     color: #1d7715;
     border-left: 0px;

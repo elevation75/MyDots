@@ -2,21 +2,25 @@
     border: none;
     border-radius: 0;
     font-family: "JetBrainsMono NF";
-    font-weight: normal;
-    font-size: 14px;
+    font-weight: 400;
+    font-size: 20px;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
+    background: rgba(21, 18, 27, 0.5);
     /*background: rgba(12, 12, 12, 0.5);*/
-    color: #041e42;
-	padding: 0;
+    color: #12a7ec;
+    padding: 0;
     margin: 0;
 }
 
+window#waybar.empty {
+    background-color: transparent;
+}
+
 tooltip {
-    background: #041e42;
+    background: #12a7ec;
     opacity: 1.0;
     border-radius: 8px;
     border-width: 1px;
@@ -25,21 +29,21 @@ tooltip {
 }
 
 tooltip label{
-    color: #869397;
+    color: #11111b;
 }
 
 #workspaces button {
     padding: 2px;
-    color: #041e42;
+    color: #12a7ec;
     margin-right: 5px;
 }
 
 #workspaces button.active {
-    color: #00A19B ;
+    color: orange;
 }
 
 #workspaces button.focused {
-    color: #C8CCCE;
+    color: #12a7ec;
     background: #C8CCCE;
     border-radius: 10px;
 }
@@ -51,15 +55,21 @@ tooltip label{
 }
 
 #workspaces button:hover {
+    color: #12a7ec;
     background: #C8CCCE;
-    color: #C8CCCE;
     border-radius: 10px;
 }
+#custom-launcher,
+#custom-launcher2,
+#custom-chatgpt,
+#custom-email,
+#custom-sofi,
+#custom-keybinds,
 #custom-wallpaper,
 #custom-playerctl,
-#custom-email,
 #custom-lock_screen,
 #custom-light_dark,
+#custom-power_btn,
 #custom-power_profile,
 #custom-weather,
 #window,
@@ -71,39 +81,27 @@ tooltip label{
 #clock,
 #battery,
 #pulseaudio,
-#battery,
 #network,
 #tray,
-#custom-sofi,
-#custom-launcher,
-#custom-launcher2,
-#custom-chatgpt,
 #temperature,
+#workspaces,
 #backlight {
-    background: #869397;
-    /*background: rgba(12, 12, 12, 0.0);*/
-    opacity: 1.0;
-    padding: 5px 10px;
-    margin: 4px 4px;
-    margin-top: 2px;
-    border: 2px;
+    /*background: #0E0F13;*/
+    background: rgba(12, 12, 12, 0.0);
+    opacity: 0.8;
+    padding: 0px 10px;
+    margin: 3px 0px;
+    margin-top: 10px;
+    border: 0px;
 }
 
-#custom-power_btn {
-    color: #869397;
-    font-size: 30px;
-    margin-left: 4px;
-    margin-top: 0px;
+#tray, #custom-lock_screen, #temperature, #backlight, #cpu{
+    border-radius: 10px 0px 0px 10px;
+}
+
+#custom-light_dark, #custom-power_btn, #workspaces,#pulseaudio.microphone, #battery, #disk{
+    border-radius: 0px 10px 10px 0px;
     margin-right: 10px;
-}
-
-#tray, #custom-lock_screen, #temperature, #backlight, #cpu, #memory,#custom-launcher, #custom-launcher2, #custom-sofi, #custom-email, #custom-chatgpt, #pulseaudio {
-    border-radius:15px 15px 15px 15px;
-}
-
-#custom-light_dark, #pulseaudio.microphone, #battery, #disk, #custom-wallpaper, #clock, #custom-weather, #network {
-    border-radius: 15px 15px 15px 15px;
-    margin-right: 5px;
 }
 
 #temperature.critical {
@@ -129,32 +127,28 @@ tooltip label{
 }
 
 #custom-logo {
-    color: #869397;
-    font-size: 40px;
-    margin-left: 4px;
-    margin-top: 0px;
+    font-size: 53px;
+    margin-left: 15px;
+    margin-top: 7px;
     margin-right: 10px;
-}
-
-#custom-wallpaper {
-	color: #041e42;
-    border-left: 0px;
-    border-right: 0px;
-}
+    background-image: url('/home/just/.config/waybar/icons/rus1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+} 
 
 #pulseaudio {
-    color: #041e42;
+    color: #407cdd;
+    border-left: 0px;
+    border-right: 0px;
+}
+#custom-wallpaper {
+	color: orange;
     border-left: 0px;
     border-right: 0px;
 }
 
-#pulseaudio.microphone {
-    color: #003594;
-    border-left: 0px;
-    border-right: 0px;
-}
 #custom-launcher {
-    color: #041e42;
+    color: #406dde;
     border-left: 0px;
     border-right: 0px;
 }
@@ -166,11 +160,24 @@ tooltip label{
 }
 
 #custom-sofi {
-    color: red;
+	color: red;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+#pulseaudio.microphone {
+    color: #ad6bfd;
     border-left: 0px;
     border-right: 0px;
 }
+
 #battery {
     color: #1d7715;
     border-left: 0px;
 }
+
+#network.disconnected {
+    color: darkred;
+}
+
+

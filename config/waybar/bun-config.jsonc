@@ -1,22 +1,14 @@
 {
     "layer": "top",
     "position": "top",
-    //"mode": "dock",
+    "mod": "dock",
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "height": 30,
-    "exclusive": true,
-"passthrough": false,
-"spacing": 2,
-"fixed-center": true,
-"ipc": true,
-"margin-top": 3,
-"margin-left": 8,
-"margin-right": 8,
+    "height": 53,
     "modules-left": ["custom/logo","wlr/workspaces","cpu","memory","disk","custom/sofi","custom/launcher","custom/launcher2","custom/email","custom/chatgpt"],
     "modules-center": ["clock","custom/weather"],
-    "modules-right": ["network","custom/wallpaper","backlight","battery","pulseaudio","pulseaudio#microphone","tray","custom/light_dark","custom/power_btn"],
+    "modules-right": ["network","custom/wallpaper","battery","pulseaudio","pulseaudio#microphone","tray","custom/light_dark","custom/power_btn"],
     
     "hyprland/window": {
         "format": "{}"
@@ -29,7 +21,7 @@
     // Battery
     "battery": {
         "states": {
-            "good": 95,
+            // "good": 95,
             "warning": 30,
             "critical": 15
         },
@@ -60,8 +52,8 @@
         /*"format":"", logo star plina Cowboys*/
         /*"format":"", logo alta stea plina pt logo Cowboys*/
         /*"format":"🏈", /*minge NFL*/
-      "format":"", /*logo2 lta stea plina pt logo Cowboys*/
-        /*"format": " ",*/
+      /*"format":"", /*logo2 lta stea plina pt logo Cowboys*/
+        "format": " ",
         "on-click": "pkill wofi; wofi -n",
         "tooltip": false
     },
@@ -82,11 +74,11 @@
         "format": "",
         "on-click": "~/.config/waybar/scripts/baraction light",
         "tooltip": true,
-        "tooltip-format": "Change waybar theme"
+        "tooltip-format": "{Change waybar theme}"
     },
 
     "custom/power_btn": {
-        "format": "🏈",
+        "format": "",
         "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
         "tooltip": false
     },
@@ -191,11 +183,24 @@
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
-        "format-icons": ["󱩏", "󱩓", "󱩖"],
-        "on-scroll-up": "brightnessctl set 5%+",
-        "on-scroll-down": "brightnessctl set 5%-",
+        "format-icons": ["", "", ""],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-",
         "min-length": 6
     },
+
+    /* "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+    }, */
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
@@ -268,7 +273,7 @@
     "network": {
         "interface": "enp7s0", // (Optional) To force the use of this interface
         "format-wifi": "  {signalStrength}%  ",
-        "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes}",   
+        "format-ethernet": "▼{bandwidthDownBytes} ▲{bandwidthUpBytes}",   
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "⚠ Disconnected ",
         //"tooltip-format": "{essid} {ifname}: {ipaddr}",
@@ -311,7 +316,7 @@
 
     "custom/wallpaper": {
         "format": " ",
-        "on-click": "~/.config/waybar/themes/DC/wallpaper-switcher ; /usr/bin/mpv ~/.config/waybar/blup2.mp3",
+        "on-click": "~/.config/hypr/wallpaper-switcher ; /usr/bin/mpv ~/.config/waybar/blup2.mp3",
         "tooltip": true,
         "tooltip-format": "Change wallpaper"
     }

@@ -2,44 +2,48 @@
     border: none;
     border-radius: 0;
     font-family: "JetBrainsMono NF";
-    font-weight: normal;
-    font-size: 14px;
+    font-weight: 400;
+    font-size: 16px;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
-    /*background: rgba(12, 12, 12, 0.5);*/
-    color: #041e42;
-	padding: 0;
+    background: rgba(21, 18, 27, 0.0);
+    /*background-color: lightgrey;*/
+    color: #869397;
+    padding: 0;
     margin: 0;
 }
 
+window#waybar.empty {
+    background-color: transparent;
+}
+
 tooltip {
-    background: #041e42;
+    background: #869397;
     opacity: 1.0;
     border-radius: 8px;
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
-    border-color: #11111b;
+    border-color: rgba(21, 18, 27, 0.4);
 }
 
 tooltip label{
-    color: #869397;
+    color: #041e42;
 }
 
 #workspaces button {
     padding: 2px;
-    color: #041e42;
+    color: #041E42;
     margin-right: 5px;
 }
 
 #workspaces button.active {
-    color: #00A19B ;
+    color: orange;
 }
 
 #workspaces button.focused {
-    color: #C8CCCE;
+    color: #12a7ec;
     background: #C8CCCE;
     border-radius: 10px;
 }
@@ -51,15 +55,22 @@ tooltip label{
 }
 
 #workspaces button:hover {
+    color: #12a7ec;
     background: #C8CCCE;
-    color: #C8CCCE;
     border-radius: 10px;
 }
+
+#custom-launcher,
+#custom-launcher2,
+#custom-chatgpt,
+#custom-email,
+#custom-sofi,
+#custom-keybinds,
 #custom-wallpaper,
 #custom-playerctl,
-#custom-email,
 #custom-lock_screen,
 #custom-light_dark,
+#custom-power_btn,
 #custom-power_profile,
 #custom-weather,
 #window,
@@ -71,37 +82,24 @@ tooltip label{
 #clock,
 #battery,
 #pulseaudio,
-#battery,
 #network,
 #tray,
-#custom-sofi,
-#custom-launcher,
-#custom-launcher2,
-#custom-chatgpt,
 #temperature,
 #backlight {
-    background: #869397;
+    background: #041e42;
     /*background: rgba(12, 12, 12, 0.0);*/
     opacity: 1.0;
     padding: 5px 10px;
     margin: 4px 4px;
-    margin-top: 2px;
+    margin-top: 3px;
     border: 2px;
-}
-
-#custom-power_btn {
-    color: #869397;
-    font-size: 30px;
-    margin-left: 4px;
-    margin-top: 0px;
-    margin-right: 10px;
 }
 
 #tray, #custom-lock_screen, #temperature, #backlight, #cpu, #memory,#custom-launcher, #custom-launcher2, #custom-sofi, #custom-email, #custom-chatgpt, #pulseaudio {
     border-radius:15px 15px 15px 15px;
 }
 
-#custom-light_dark, #pulseaudio.microphone, #battery, #disk, #custom-wallpaper, #clock, #custom-weather, #network {
+#custom-light_dark, #custom-power_btn,#pulseaudio.microphone, #battery, #disk, #custom-wallpaper, #clock, #custom-weather, #network {
     border-radius: 15px 15px 15px 15px;
     margin-right: 5px;
 }
@@ -124,37 +122,31 @@ tooltip label{
 
 #window {
     border-radius: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #custom-logo {
-    color: #869397;
+    color: #041e42;
     font-size: 40px;
     margin-left: 4px;
     margin-top: 0px;
     margin-right: 10px;
-}
-
-#custom-wallpaper {
-	color: #041e42;
-    border-left: 0px;
-    border-right: 0px;
-}
+} 
 
 #pulseaudio {
-    color: #041e42;
+    color: #7f9695;
+    border-left: 0px;
+    border-right: 0px;
+}
+#custom-wallpaper {
+	color: #869397;
     border-left: 0px;
     border-right: 0px;
 }
 
-#pulseaudio.microphone {
-    color: #003594;
-    border-left: 0px;
-    border-right: 0px;
-}
 #custom-launcher {
-    color: #041e42;
+    color: #869397;
     border-left: 0px;
     border-right: 0px;
 }
@@ -166,11 +158,24 @@ tooltip label{
 }
 
 #custom-sofi {
-    color: red;
+	color: red;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+#pulseaudio.microphone {
+    color: #7F9695;
     border-left: 0px;
     border-right: 0px;
 }
+
 #battery {
     color: #1d7715;
     border-left: 0px;
 }
+
+#network.disconnected {
+    color: darkred;
+}
+
+
