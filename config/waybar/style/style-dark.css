@@ -55,9 +55,14 @@ tooltip label{
     color: #C8CCCE;
     border-radius: 10px;
 }
+
+#custom-notification {
+    font-family: "NotoSansMono Nerd Font";
+}
+#custom-notification,
 #custom-wallpaper,
 #custom-playerctl,
-#custom-email,
+#custom-blender,
 #custom-lock_screen,
 #custom-light_dark,
 #custom-power_profile,
@@ -98,7 +103,7 @@ tooltip label{
     margin-right: 10px;
 }
 
-#tray, #custom-lock_screen, #temperature, #backlight, #cpu, #memory,#custom-launcher, #custom-launcher2, #custom-sofi, #custom-email, #custom-chatgpt, #pulseaudio {
+#tray, #custom-notification, #custom-lock_screen, #temperature, #backlight, #cpu, #memory,#custom-launcher, #custom-launcher2, #custom-sofi, #custom-blender, #custom-chatgpt, #pulseaudio {
     border-radius:15px 15px 15px 15px;
 }
 

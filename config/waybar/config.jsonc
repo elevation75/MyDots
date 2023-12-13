@@ -14,12 +14,29 @@
 "margin-top": 3,
 "margin-left": 8,
 "margin-right": 8,
-    "modules-left": ["custom/logo","cpu","memory","disk","custom/sofi","custom/launcher","custom/launcher2","custom/email","custom/chatgpt"],
+    "modules-left": ["custom/logo","wlr/workspaces","cpu","memory","disk","custom/sofi","custom/launcher","custom/launcher2","custom/blender","custom/chatgpt"],
     "modules-center": ["clock","custom/weather"],
-    "modules-right": ["network","custom/wallpaper","backlight","battery","pulseaudio","pulseaudio#microphone","tray","custom/light_dark","custom/power_btn"],
+    "modules-right": ["network","custom/wallpaper","backlight","battery","pulseaudio","pulseaudio#microphone","tray","custom/light_dark","custom/notification","custom/power_btn"],
     
     "hyprland/window": {
         "format": "{}"
+    },
+    
+    "custom/notification": {
+                    "tooltip": false,
+                    "format": "{icon}",
+                    "format-icons": {
+                         "notification": "<span foreground='red'><sup></sup></span>",
+                         "none": "",
+                         "dnd-notification": "<span foreground='red'><sup></sup></span>",
+                         "dnd-none": ""
+                    },
+                    "return-type": "json",
+                    "exec-if": "which swaync-client",
+                    "exec": "swaync-client -swb",
+                    "on-click": "swaync-client -t -sw",
+                    "on-click-right": "swaync-client -d -sw",
+                    "escape": true
     },
 
     "custom/chatgpt": {
@@ -43,9 +60,9 @@
     },
 
 
-    "custom/email": {
-    	"format": " Mail",
-    	"on-click": "thunderbird"
+    "custom/blender": {
+    	"format": "3D Blender",
+    	"on-click": "blender"
     }, 
     
     "custom/pacman": {
@@ -126,8 +143,8 @@
         "on-click": "~/.config/waybar/scripts/update-sys update",
         "interval": 300,
         "tooltip": true
-    },
- */
+    },*/
+ 
     "wlr/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -187,7 +204,7 @@
                             }
     
     },
-
+/*
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
@@ -196,7 +213,7 @@
         "on-scroll-down": "brightnessctl set 5%-",
         "min-length": 6
     },
-
+*/
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-muted": "",
@@ -266,9 +283,9 @@
     },
 
     "network": {
-        "interface": "enp7s0", // (Optional) To force the use of this interface
+        "interface": "enp3s0", // (Optional) To force the use of this interface
         "format-wifi": "  {signalStrength}%  ",
-        "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes}",   
+        "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes}",   
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "⚠ Disconnected ",
         //"tooltip-format": "{essid} {ifname}: {ipaddr}",

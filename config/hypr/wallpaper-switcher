@@ -1,6 +1,7 @@
 #!/bin/bash
 
-DIR=$HOME/Pictures/MercedesF1W14-2023/
+#DIR=$HOME/Pictures/MercedesF1W14-2023/
+DIR=$HOME/Pictures/DallasCowboys/
 PICS=($(ls ${DIR}))
 
 # Choose a random wallpaper from the list

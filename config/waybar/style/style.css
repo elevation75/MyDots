@@ -60,10 +60,14 @@ tooltip label{
     border-radius: 10px;
 }
 
+#custom-notification {
+    font-family: "NotoSansMono Nerd Font";
+}
+#custom-notification,
 #custom-launcher,
 #custom-launcher2,
 #custom-chatgpt,
-#custom-email,
+#custom-blender,
 #custom-sofi,
 #custom-keybinds,
 #custom-wallpaper,
@@ -102,7 +106,7 @@ tooltip label{
     margin-bottom: 3px;
     margin-right: 10px;
 }
-#tray, #custom-lock_screen, #temperature, #backlight, #cpu, #memory,#custom-launcher, #custom-launcher2, #custom-sofi, #custom-email, #custom-chatgpt, #pulseaudio {
+#tray, #custom-notification, #custom-lock_screen, #temperature, #backlight, #cpu, #memory,#custom-launcher, #custom-launcher2, #custom-sofi, #custom-blender, #custom-chatgpt, #pulseaudio {
     border-radius:15px 15px 15px 15px;
 }
 
