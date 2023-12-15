@@ -1,7 +1,7 @@
 #!/bin/sh
 
-P10K_CONFIG_LIGHT="/home/just/p10k-gr.zsh"
-P10K_CONFIG_DARK="/home/just/p10k-lh.zsh"
+P10K_CONFIG_LIGHT="/home/just/p10k-dc.zsh"
+P10K_CONFIG_DARK="/home/just/p10k-dc.zsh"
 
 # Check which waybar theme is set
 THEMEIS=$(readlink -f ~/.config/waybar/style.css | cut -d '-' -f2)
