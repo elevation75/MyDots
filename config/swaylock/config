@@ -1,0 +1,39 @@
+image=/home/just/Pictures/DC2.jpg
+daemonize
+show-failed-attempts
+clock
+screenshot
+#effect-blur=9x5
+effect-vignette=0.5:0.3
+color=C1D4D9
+font="JetBrainsMono Nerd Font"
+indicator
+indicator-radius=120
+indicator-thickness=20
+line-color=04BFAD
+ring-color=191724
+inside-color=027373
+key-hl-color=04BFAD
+separator-color=00000000
+text-color=1AE51A
+text-caps-lock-color=""
+line-ver-color=04BFAD
+ring-ver-color=04BFAD
+inside-ver-color=1f1d2e
+text-ver-color=1AE51A
+ring-wrong-color=ff0000
+text-wrong-color=ff0000
+inside-wrong-color=1f1d2e
+inside-clear-color=1f1d2e
+text-clear-color=1AE51A
+ring-clear-color=9ccfd8
+line-clear-color=1f1d2e
+line-wrong-color=ff0000
+bs-hl-color=027373
+grace=2
+grace-no-mouse
+grace-no-touch
+datestr=%A, %B %e
+timestr=%I:%M %p
+fade-in=0.2
+ignore-empty-password

@@ -32,37 +32,61 @@ tooltip label{
     color: #002244;
 }
 
+#workspaces {
+    margin: 3px 1px 1px 3px;
+    padding: 0px 1px;
+
+    color: #1d7715;
+    
+    border-radius: 15px;
+    border: 0px;
+
+}
+
 #workspaces button {
-    padding: 2px;
-    color: #002244;
-    margin-right: 5px;
+    border-radius: 15px;
+    border: 0px;
+
+    padding: 0px 3px;
+    color: #869397;
+    margin: 4px 3px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #workspaces button.active {
-    color: orange;
+    color: #003594;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+    border-radius: 15px;
+    min-width: 40px;
+
 }
 
 #workspaces button.focused {
-    color: #12a7ec;
+    color: #7F9695;
     background: #C8CCCE;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 #workspaces button.urgent {
     color: #C8CCCE;
     background: #a6e3a1;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 #workspaces button:hover {
-    color: #12a7ec;
-    background: #C8CCCE;
-    border-radius: 10px;
+    color: red;
+    background: #041e42;
+    border-radius: 15px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #custom-notification {
     font-family: "NotoSansMono Nerd Font";
 }
+
 #custom-notification,
 #custom-launcher,
 #custom-launcher2,
@@ -121,10 +145,7 @@ tooltip label{
 }
 
 
-#workspaces {
-    padding-right: 0px;
-    padding-left: 5px;
-}
+
 
 #custom-power_profile {
     color: #1d7715;

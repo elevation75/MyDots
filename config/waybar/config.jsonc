@@ -14,9 +14,9 @@
 "margin-top": 3,
 "margin-left": 8,
 "margin-right": 8,
-    "modules-left": ["custom/logo","wlr/workspaces","cpu","memory","disk","custom/sofi","custom/launcher","custom/launcher2","custom/blender","custom/chatgpt"],
+    "modules-left": ["custom/logo","hyprland/workspaces","cpu","memory","disk","custom/sofi","custom/launcher","custom/launcher2","custom/blender","custom/chatgpt"],
     "modules-center": ["clock","custom/weather"],
-    "modules-right": ["network","custom/wallpaper","backlight","battery","pulseaudio","pulseaudio#microphone","tray","custom/light_dark","custom/notification","custom/power_btn"],
+    "modules-right": ["network","custom/wallpaper","backlight","battery","pulseaudio","pulseaudio#microphone","tray","custom/light_dark","custom/power_btn"],
     
     "hyprland/window": {
         "format": "{}"
@@ -77,6 +77,7 @@
         /*"format":"", logo star plina Cowboys*/
         /*"format":"", logo alta stea plina pt logo Cowboys*/
         /*"format":"🏈", /*minge NFL*/
+        /*"format":"", /*stea in cerc*/
       "format":"", /*logo2 lta stea plina pt logo Cowboys*/
         /*"format": " ",*/
         "on-click": "pkill wofi; wofi -n",
@@ -145,17 +146,21 @@
         "tooltip": true
     },*/
  
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "on-click": "activate",
         "format": "{icon}",
         "format-icons": {
-                "1": "󰬎", //George Russell workspace
-                "2": "󰬓", //Lewis Hamilton one
-                "3": "󰬔", //Michael Shumacher
-                "4": "󰬛", //Toto Wolf
-                "5": "󰎱"
+                "1": "󰎤", //George Russell workspace "󰬎"
+                "2": "󰎧", //Lewis Hamilton one "󰬓"
+                "3": "󰎪", //Michael Shumacher "󰬔"
+                "4": "󰎭", //Toto Wolf "󰬛"
+                "5": "󰎱",
+                "6": "󰎳",
+                "7": "󰎶",
+                "8": "󰎹",
+                "9": "󰎼",
         },
         "sort-by-number": true
     },
@@ -283,7 +288,7 @@
     },
 
     "network": {
-        "interface": "enp3s0", // (Optional) To force the use of this interface
+        "interface": "enp7s0", // (Optional) To force the use of this interface
         "format-wifi": "  {signalStrength}%  ",
         "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes}",   
         "format-linked": "{ifname} (No IP)",
