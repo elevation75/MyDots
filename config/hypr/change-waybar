@@ -1,0 +1,15 @@
+#!/bin/bash
+BEGIN="<span bgcolor='#fff' fgcolor='#d50044' font='14'>"; END="</span>"
+yad --title "Change Waybar" --form --with=125 --height=100 --text="<span foreground='#fff' font_desc='12'><b>Change your waybar theme</b></span>" --image "logo" --image-on-top \
+--back=blue \
+--field="${BEGIN} <b>Russell F1 Theme (top)  </b>${END} ":fbtn "$HOME/.config/hypr/modding/waybar-rus" \
+--field="${BEGIN} <b>Russell F1 Theme (bottom)  </b>${END} ":fbtn "$HOME/.config/hypr/modding/waybar-rus-b" \
+--field="${BEGIN} <b>Hamilton F1 Theme (top)  </b>${END} ":fbtn "$HOME/.config/hypr/modding/waybar-ham" \
+--field="${BEGIN} <b>Hamilton F1 Theme (bottom)  </b>${END} ":fbtn "$HOME/.config/hypr/modding/waybar-ham-b" \
+--field="${BEGIN} <b>DallasCowboys Dark Theme (top) 🏈</b>${END} ":fbtn "$HOME/.config/hypr/modding/waybar-dc-dark" \
+--field="${BEGIN} <b>DallasCowboys Light Theme (top) 🏈</b>${END} ":fbtn "$HOME/.config/hypr/modding/waybar-dc-light" \
+--field="${BEGIN} <b>FC Barcelona Theme (top) ⚽ </b>${END} ":fbtn "$HOME/.config/hypr/modding/waybar-barcelona" \
+--field="${BEGIN} <b>FC Barcelona Theme (bottom) ⚽ </b>${END} ":fbtn "$HOME/.config/hypr/modding/waybar-barcelona-b" \
+--field="${BEGIN} <b>Back to default theme</b> ${END} ":fbtn "$HOME/.config//hypr/modding/waybar-default" \
+--button=Cancel!gtk-cancel:1
+

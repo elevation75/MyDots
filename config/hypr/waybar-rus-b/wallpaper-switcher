@@ -1,0 +1,19 @@
+#!/bin/bash
+
+DIR=$HOME/Pictures/MercedesF1W14-2023/
+#DIR=$HOME/Pictures/2024/
+PICS=($(ls ${DIR}))
+
+# Choose a random wallpaper from the list
+RANDOMPICS=${PICS[ $RANDOM % ${#PICS[@]} ]}
+
+if [[ $(pidof swaybg) ]]; then
+  pkill swaybg
+fi
+
+swww query || swww init
+
+# Set the wallpaper as the background
+swww img ${DIR}/${RANDOMPICS} --transition-fps 30 --transition-type any --transition-duration 3
+
+#killall -f || main

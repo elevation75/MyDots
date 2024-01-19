@@ -1,14 +1,14 @@
 #!/bin/zsh
-background=$(find $HOME/Pictures/DallasCowboys/ -type f | shuf -n 1)
+background=$(find $HOME/Pictures/2024/ -type f | shuf -n 1)
 swaybg --image $background -m fill&
 
 function handle {
     if [[ ${1:0:9} == "workspace" ]]; then
         echo $line
-    newbackground=$(find $HOME/Pictures/DallasCowboys/ -type f | shuf -n 1)
+    newbackground=$(find $HOME/Pictures/2024/ -type f | shuf -n 1)
     echo $newbackground
     until [[ ("${background}" != "${newbackground}") && (-r $newbackground) ]]; do
-        newbackground=$(find $HOME/Pictures/DallasCowboys/ -type f | shuf -n 1)
+        newbackground=$(find $HOME/Pictures/2024/ -type f | shuf -n 1)
         echo $newbackground
         sleep .3
         done

@@ -1,0 +1,340 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    //"mode": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 10,
+    "width": 1900,
+    "exclusive": true,
+"passthrough": false,
+"spacing": 2,
+"fixed-center": true,
+"ipc": true,
+"margin": "0 0 0 0",
+    "modules-left": ["custom/logo","hyprland/workspaces","cpu","memory","disk","custom/sofi", "custom/launcher2","custom/blender","custom/chatgpt"],
+    "modules-center": ["clock","custom/weather"],
+    "modules-right": ["network","custom/wallpaper","backlight","battery","pulseaudio","pulseaudio#microphone","tray","custom/light_dark","custom/power_btn"],
+    
+    "hyprland/window": {
+        "format": "{}"
+    },
+    
+    "custom/notification": {
+                    "tooltip": false,
+                    "format": "{icon}",
+                    "format-icons": {
+                         "notification": "<span foreground='red'><sup></sup></span>",
+                         "none": "",
+                         "dnd-notification": "<span foreground='red'><sup></sup></span>",
+                         "dnd-none": ""
+                    },
+                    "return-type": "json",
+                    "exec-if": "which swaync-client",
+                    "exec": "swaync-client -swb",
+                    "on-click": "swaync-client -t -sw",
+                    "on-click-right": "swaync-client -d -sw",
+                    "escape": true
+    },
+
+    "custom/chatgpt": {
+        "format": " ChatGPT",
+        "on-click": "chat-gpt"
+    },
+    // Battery
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}{capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon}{time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [" ", "", " ", " ", " "]
+    },
+
+
+    "custom/blender": {
+    	"format": " Blender",
+    	"on-click": "blender"
+    }, 
+    
+    "custom/pacman": {
+    "format": "{} ",
+    "interval": 1800,
+    "exec": "/home/just/.config/waybar/scripts/update_script.sh",
+    "on-click": "exec kitty -e /home/just/.config/waybar/scripts/update_script.sh"
+    },
+
+    "custom/logo": {
+        /*"format":"", logo star Cowboys*/
+        /*"format":"", logo star plina Cowboys*/
+        /*"format":"", logo alta stea plina pt logo Cowboys*/
+        /*"format":"🏈", /*minge NFL*/
+        /*"format":"", /*stea in cerc*/
+      /*"format":"󰎭 󰎮   󰬓󰫵 󰰌 󰰁  󰲓 󰴵 󰺗  󰾅 󱌃 󱑼 ", /*logo2 lta stea plina pt logo Cowboys*/
+        "format": "⚽",
+        "on-click": "pkill wofi; wofi -n",
+        "tooltip": false
+    },
+
+    "custom/sofi": {
+		"format": "󰓦 Sofirem",
+		"on-click": "sofi",
+		"tooltip": false
+    },
+	
+    "custom/lock_screen": {
+        "format": "",
+        "on-click": "sh -c '(sleep 0.5s; swaylock)' & disown",
+        "tooltip": false
+    },
+
+    "custom/light_dark": {
+        "format": "",
+        /*"on-click": "~/.config/waybar/scripts/baraction light",*/
+        "on-click" : "$HOME/.config/hypr/change-waybar",
+        "tooltip": true,
+        "tooltip-format": "Change waybar theme"
+    },
+
+    "custom/power_btn": {
+        "format": "🏃",
+        "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
+        "tooltip": false
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": "󰍛 {usage}%",
+        "interval": 1,
+        "format-alt-click": "click",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "max-length": 10,
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": " {percentage_used}%",
+        "path": "/",
+        "tooltip": true,
+        "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "󰾅 {}%",
+        "max-length": 10,
+        "tooltip": true,
+        "tooltip-format": "Memory - {used:0.1f}GB used",
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    },
+
+    /* "custom/updates": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/update-sys",
+        "on-click": "~/.config/waybar/scripts/update-sys update",
+        "interval": 300,
+        "tooltip": true
+    },*/
+ 
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+                "1": "󰎤", //George Russell workspace "󰬎"
+                "2": "󰎧", //Lewis Hamilton one "󰬓"
+                "3": "󰎪", //Michael Shumacher "󰬔"
+                "4": "󰎭", //Toto Wolf "󰬛"
+                "5": "󰎱",
+                "6": "󰎳",
+                "7": "󰎶",
+                "8": "󰎹",
+                "9": "󰎼",
+        },
+        "sort-by-number": true
+    },
+    
+   "custom/weather": {
+        //shows the current weather and forecast
+        "tooltip" : true,
+        "format" : "{}°C",
+        "interval" : 3600,
+        "exec" : "/usr/bin/wttrbar --date-format %d-%m-%Y --location Bucharest --hide-conditions",
+        /*"exec": "~/.config/waybar/scripts/Weather.sh",*/
+        "return-type" : "json"
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 20,
+    },
+
+    "clock": {
+        "format": "{:%H:%M:%S}",
+        "interval": 60,
+        "tooltip": true,
+        /*"tooltip-format": "{: %A, %e %B %Y}"*/
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+                "calendar": {
+                            "mode"          : "year",
+                            "mode-mon-col"  : 3,
+                            /*"weeks-pos"     : "right",*/
+                            "on-scroll"     : 1,
+                            "on-click-right": "mode",
+                            "format": {
+                                      "months":     "<span color='#fff'><b>{}</b></span>",
+                                      "days":       "<span color='orange'>{}</span>",
+                                      /*"weeks":      "<span color='#99ffdd'><b>W{}</b></span>",*/
+                                      /*"weekdays":   "<span color='#ffcc66'><b>{}</b></span>",*/
+                                      "today":      "<span color='#ff0000'><b>{}</b></span>"
+                                      }
+                            },
+                "actions":  {
+                            "on-click-right": "mode",
+                            "on-click-forward": "tz_up",
+                            "on-click-backward": "tz_down",
+                            "on-scroll-up": "shift_up",
+                            "on-scroll-down": "shift_down"
+                            }
+    
+    },
+/*
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["󱩏", "󱩓", "󱩖"],
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "min-length": 6
+    },
+*/
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+		"on-click": "~/.config/waybar/scripts/volume --toggle",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "~/.config/waybar/scripts/volume --inc",
+        "on-scroll-down": "~/.config/waybar/scripts/volume --dec",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+		"tooltip": true,
+        "tooltip-format": "{icon} at {volume}%"
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "on-click": "~/.config/waybar/scripts/volume --toggle-mic",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "~/.config/waybar/scripts/volume --mic-inc",
+        "on-scroll-down": "~/.config/waybar/scripts/volume --mic-dec",
+        "scroll-step": 5,
+		"tooltip": true,
+		"tooltip-format": " at {volume}%"
+    },
+
+    "custom/waybar-mpris": {
+    "return-type": "json",
+    "exec": "waybar-mpris --position --autofocus",
+    "on-click": "waybar-mpris --send toggle",
+    // This option will switch between players on right click.
+        "on-click-right": "waybar-mpris --send player-next",
+    // The options below will switch the selected player on scroll
+        // "on-scroll-up": "waybar-mpris --send player-next",
+        // "on-scroll-down": "waybar-mpris --send player-prev",
+    // The options below will go to next/previous track on scroll
+        // "on-scroll-up": "waybar-mpris --send next",
+        // "on-scroll-down": "waybar-mpris --send prev",
+    "escape": true,
+    },
+
+    "custom/playerctl": {
+        "format": "🎝 {}",
+        "height": 50,
+        "return-type": "json",
+        "max-length": 40,
+        "exec": "playerctl -a metadata --format '{\"text\": \"{{playerName}}: {{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+        "on-click": "playerctl play-pause",
+        "on-click-middle":"playerctl previous",
+        "on-click-right":"playerctl next"
+    },
+
+    "temperature": {
+        "thermal-zone": 1,
+        "format": " {temperatureC}°C",
+        "critical-threshold": 70,
+        "format-critical": " {temperatureC}°C",
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    },
+
+    "network": {
+        "interface": "enp7s0", // (Optional) To force the use of this interface
+        "format-wifi": "  {signalStrength}%  ",
+        "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes}",   
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "⚠ Disconnected ",
+        //"tooltip-format": "{essid} {ifname}: {ipaddr}",
+		"tooltip-format": "󰌗 {ipaddr}",
+        "interval":"1",
+        "on-click": "alacritty -e nmtui"
+
+    },
+
+    "network#vpn": {
+        "interface": "tun0",
+        "format": "  {essid} ({signalStrength}%)",
+        "format-disconnected": "⚠  Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+    },
+
+    "custom/launcher": {
+        "format": "󰗀 Code",
+		"return-type": "json",
+        "on-click": "~/.config/waybar/scripts/launch_app.sh",
+        "interval": 1
+
+    },
+
+    "custom/launcher2": {
+        "format": "󱚍 Edit",
+        "return-type": "json",
+        "on-click": "~/.config/waybar/scripts/launch_app2.sh",
+        "interval": 1
+
+    },
+
+    "custom/keybinds": {
+        "format":"",
+        "tooltip": true,
+        "label": "Help",
+        "on-click": "~/.config/hypr/scripts/keybindings.sh",
+    },
+
+
+    "custom/wallpaper": {
+        "format": "👕",
+        "on-click": "~/.config/hypr/waybar/wallpaper-switcher ; /usr/bin/mpv ~/.config/hypr/waybar/barca.mp3",
+        "tooltip": true,
+        "tooltip-format": "Change wallpaper"
+    }
+}

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+rm -r ~/.config/hypr/waybar/*
+cp -r ~/.config/hypr/waybar-dc-light/* ~/.config/hypr/waybar/
+
+#kill first
+if [[ $(pidof waybar) ]]; then
+	killall -q waybar
+fi
+
+while pgrep -u $UID -x waybar > /dev/null;do sleep 1;done
+
+#startup again 
+CONFIG="$HOME/.config/hypr/waybar/config.jsonc"
+STYLE="$HOME/.config/hypr/waybar/style.css"
+
+if [[ ! $(pidof waybar) ]]; then
+	waybar --bar main-bar --log-level error --config ${CONFIG} --style ${STYLE}
+fi
