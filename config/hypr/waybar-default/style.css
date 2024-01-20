@@ -164,16 +164,45 @@ window#waybar.empty #window {
  #custom-settings, 
  #custom-wallpaper, 
  #custom-system,
+ #custom-media,
  #custom-waybarthemes {
      margin-right: 23px;
      font-size: 20px;
      font-weight: bold;
      color: @iconcolor;
  }
- 
- #custom-waybarthemes,#custom-system {
+ #mpd {
+    padding: 0 10px;
+    color: #ffffff;
+}
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
+#custom-waybarthemes,#custom-system {
      margin-right:15px;
- }
+}
+#custom-waybar-media.paused {
+    color: grey;
+}
+#custom-waybar-media.playing {
+    color: orange;
+}
+#custom-waybar-media.stopped {
+    color: red;
+}
 
 /* -----------------------------------------------------
  * Custom Modules
@@ -354,6 +383,16 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #tray {
+    /*background-color: #2980b9;*/
+    background-color: black;
+    font-size: 16px;
+    color: @textcolor1;
+    border-radius: 15px;
+    padding: 2px 10px 0px 10px;
+    margin: 10px 15px 10px 0px;
+}
+
+#custom-waybar-media {
     /*background-color: #2980b9;*/
     background-color: black;
     font-size: 16px;

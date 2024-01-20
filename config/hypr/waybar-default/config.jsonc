@@ -31,19 +31,23 @@
     // Modules Left
     "modules-left": [
         "custom/appmenu",
-        "custom/settings",
+        "custom/keybindings",
         
         "custom/wallpaper",
         // "wlr/taskbar",
         "group/quicklinks",
-        "hyprland/window"
-        /*"custom/starter"*/
+        "hyprland/window",
+        "custom/waybar-media"
+        //"custom/media"//
+        //"custom/starter"//
     ],
 
     // Modules Center
     "modules-center": [
         "hyprland/workspaces",
         "custom/weather"
+
+        
         
     ],
 
