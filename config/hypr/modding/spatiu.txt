@@ -1,0 +1,12 @@
+Wed Apr  3 18:05:01 EEST 2024
+
+-------------
+513G	./programe
+159G	./pnews
+2.5G	./demotrafic
+4.0K	./test
+33G	./profittv
+1.6G	./orangesport
+862G	./teritoriu
+20K	./lansaregrila
+1.6T	.

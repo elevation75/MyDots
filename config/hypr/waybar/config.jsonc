@@ -27,19 +27,26 @@
 
     // Load Modules
     "include": ["~/.config/hypr/waybar-default/modules.json"],
+    
 
     // Modules Left
+    
     "modules-left": [
-        "custom/appmenu",
-        "custom/settings",
-        
-        "custom/wallpaper",
-        // "wlr/taskbar",
-        "group/quicklinks",
-        "hyprland/window"
-        /*"custom/starter"*/
-    ],
 
+        "custom/appmenu",
+        //"custom/keybindings",//
+        "custom/wallpaper",
+        "group/myapps",
+        // "wlr/taskbar"
+        //"group/quicklinks",//
+        "hyprland/window"
+        //"custom/waybar-media"//
+        //"custom/media"
+        //"custom/starter"
+    
+    ],
+        
+    
     // Modules Center
     "modules-center": [
         "hyprland/workspaces",
@@ -52,9 +59,10 @@
         /*"custom/updates",*/
         "pulseaudio",
         "bluetooth",
-        "battery", 
+        "battery",
         "network",
         "group/hardware",
+        //"group/apps",//
         "tray",
         /*"custom/cliphist",*/
         "clock",

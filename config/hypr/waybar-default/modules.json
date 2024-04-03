@@ -88,7 +88,7 @@
     "custom/wallpaper": {
         "format": "",
         "on-click": "~/.config/hypr/waybar-default/wallpaper-switcher; /usr/bin/mpv ~/.config/hypr/waybar-default/blup2.mp3",
-        "on-click-right": "~/dotfiles/hypr/scripts/wallpaper.sh",
+        "on-click-right": "~/dotfiles/hypr/wallpaper.sh",
         "tooltip": false
     },
 
@@ -134,7 +134,6 @@
         "return-type": "json",
         "on-click": "~/.config/hypr/waybar-default/scripts/launch_app2.sh",
         "interval": 1
-
     },
 
     // Thorium Browser Launcher
@@ -160,7 +159,7 @@
 
     // Wofi Application Launcher
     "custom/appmenu": {
-        "format": "󰀵",
+        "format": "63",
         "on-click": "wofi -show drun -replace",
         "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
         "tooltip": false
@@ -205,7 +204,7 @@
         "format" : "{}°C",
         "interval" : 3600,
         "exec" : "/usr/bin/wttrbar --date-format %d-%m-%Y --location Bucharest --hide-conditions",
-        /*"exec": "~/.config/waybar/scripts/Weather.sh",*/
+        /*"exec": "~/.config/hypr/waybar/scripts/Weather.sh",*/
         "return-type" : "json"
     },
 
@@ -213,6 +212,45 @@
     "custom/system": {
         "format": "⟷",
         "tooltip": false
+    },
+
+    // Appps
+    "custom/myapps": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Apps Menu"
+    },
+
+    // Stacer
+    "custom/stacer": {
+        "format": "",
+        "on-click": "stacer",
+        "tooltip": true
+    },
+
+    // Sport results
+    "custom/sport": {
+        "format": "",
+        "on-click": "/home/just/Documents/idei/live-game-update/logos-functional_scores_GUI2.py",
+        "tooltip": true
+    },
+
+    // Email
+    "custom/thunderbird": {
+        "format": "󰇯",
+        "on-click": "thunderbird"
+    },
+
+    // Kitty terminal
+    "custom/kitty": {
+        "format": "",
+        "on-click": "kitty"
+    },
+
+    // Remmina Desktop
+    "custom/remmina": {
+        "format": "",
+        "on-click": "remmina"
     },
 
     // CPU
@@ -253,6 +291,28 @@
             "cpu",
             "memory",
             "hyprland/language"
+        ]
+    },
+
+    // Group Apps
+    "group/myapps": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },        
+        "modules": [
+            "custom/myapps",
+            "custom/filemanager",
+            "custom/kitty",
+            "custom/browser",
+            "custom/thunderbird",
+            "custom/chatgpt",
+            "custom/sublime",
+            "custom/stacer",
+            "custom/remmina",
+            "custom/sport"
         ]
     },
     
@@ -370,7 +430,7 @@
             "car": "",
             "default": ["", " ", " "]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol-qt"
     },
 
     // Bluetooth

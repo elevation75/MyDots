@@ -10,6 +10,7 @@ yad --title "Change Waybar" --form --with=125 --height=100 --text="<span foregro
 --field="${BEGIN} <b>DallasCowboys Light Theme (top) 🏈</b>${END} ":fbtn "$HOME/.config/hypr/modding/waybar-dc-light" \
 --field="${BEGIN} <b>FC Barcelona Theme (top) ⚽ </b>${END} ":fbtn "$HOME/.config/hypr/modding/waybar-barcelona" \
 --field="${BEGIN} <b>FC Barcelona Theme (bottom) ⚽ </b>${END} ":fbtn "$HOME/.config/hypr/modding/waybar-barcelona-b" \
+--field="${BEGIN}* <b>Arcolinux Theme (default) A </b>${END} ":fbtn "$HOME/.config/hypr/modding/waybar-arco" \
 --field="${BEGIN} <b>Back to default theme</b> ${END} ":fbtn "$HOME/.config//hypr/modding/waybar-default" \
 --button=Cancel!gtk-cancel:1
 

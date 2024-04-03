@@ -88,7 +88,7 @@
     "custom/wallpaper": {
         "format": "",
         "on-click": "~/.config/hypr/waybar-default/wallpaper-switcher; /usr/bin/mpv ~/.config/hypr/waybar-default/blup2.mp3",
-        "on-click-right": "~/dotfiles/hypr/scripts/wallpaper.sh",
+        "on-click-right": "~/dotfiles/hypr/wallpaper.sh",
         "tooltip": false
     },
 
@@ -100,16 +100,17 @@
     },
     
     // Settings
-    "custom/settings": {
+    /*"custom/settings": {
         "format": "",
         "on-click": "alacritty --class dotfiles-floating -e ~/.config/hypr/settings.sh",
         "tooltip": false
     },
+    */
 
     // Keybindings
     "custom/keybindings": {
-        "format": "",
-        "on-click": "~/dotfiles/hypr/scripts/keybindings.sh",
+        "format": "?",
+        "on-click": "~/.config/hypr/scripts/keybindings.sh",
         "tooltip": false
     },
 
@@ -133,7 +134,6 @@
         "return-type": "json",
         "on-click": "~/.config/hypr/waybar-default/scripts/launch_app2.sh",
         "interval": 1
-
     },
 
     // Thorium Browser Launcher
@@ -146,7 +146,7 @@
     // ChatGPT Launcher
     "custom/chatgpt": {
         "format": "",
-        "on-click": "chat-gpt",
+        "on-click": "/usr/bin/chat-gpt",
         "tooltip": false
     },
 
@@ -159,7 +159,7 @@
 
     // Wofi Application Launcher
     "custom/appmenu": {
-        "format": "󰀵",
+        "format": "63",
         "on-click": "wofi -show drun -replace",
         "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
         "tooltip": false
@@ -204,7 +204,7 @@
         "format" : "{}°C",
         "interval" : 3600,
         "exec" : "/usr/bin/wttrbar --date-format %d-%m-%Y --location Bucharest --hide-conditions",
-        /*"exec": "~/.config/waybar/scripts/Weather.sh",*/
+        /*"exec": "~/.config/hypr/waybar/scripts/Weather.sh",*/
         "return-type" : "json"
     },
 
@@ -212,6 +212,45 @@
     "custom/system": {
         "format": "⟷",
         "tooltip": false
+    },
+
+    // Appps
+    "custom/myapps": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Apps Menu"
+    },
+
+    // Stacer
+    "custom/stacer": {
+        "format": "",
+        "on-click": "stacer",
+        "tooltip": true
+    },
+
+    // Sport results
+    "custom/sport": {
+        "format": "",
+        "on-click": "/home/just/Documents/idei/live-game-update/logos-functional_scores_GUI2.py",
+        "tooltip": true
+    },
+
+    // Email
+    "custom/thunderbird": {
+        "format": "󰇯",
+        "on-click": "thunderbird"
+    },
+
+    // Kitty terminal
+    "custom/kitty": {
+        "format": "",
+        "on-click": "kitty"
+    },
+
+    // Remmina Desktop
+    "custom/remmina": {
+        "format": "",
+        "on-click": "remmina"
     },
 
     // CPU
@@ -252,6 +291,28 @@
             "cpu",
             "memory",
             "hyprland/language"
+        ]
+    },
+
+    // Group Apps
+    "group/myapps": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },        
+        "modules": [
+            "custom/myapps",
+            "custom/filemanager",
+            "custom/kitty",
+            "custom/browser",
+            "custom/thunderbird",
+            "custom/chatgpt",
+            "custom/sublime",
+            "custom/stacer",
+            "custom/remmina",
+            "custom/sport"
         ]
     },
     
@@ -296,6 +357,45 @@
         "on-click": "alacritty -e nmtui"
     },
 
+    //MPD stuff
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+
+    //Player Control
+    "custom/waybar-media": {
+        "return-type": "json",
+        "max-length": 25,
+        "exec": "~/.config/hypr/waybar-media.py status",
+        "on-click": "~/.config/hypr/waybar-media.py playpause",
+        "on-scroll-up": "~/.config/hypr/waybar-media.py previous",
+        "on-scroll-down": "~/.config/hypr/waybar-media.py next",
+        "escape": true
+    },
+
     // Battery
     "battery": {
         "states": {
@@ -330,7 +430,7 @@
             "car": "",
             "default": ["", " ", " "]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol-qt"
     },
 
     // Bluetooth
